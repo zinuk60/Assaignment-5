@@ -35,7 +35,7 @@ for(let i=0;i<accessCallButton.length;i++){
     accessCallButton[i].addEventListener('click',function(){
        
         if(coinCount<=0){
-            alert("you have no coin")
+            alert("you have no available coin...you need 20 coin for a call")
             return
         }
         alert("calling "+accessTitle+ " "+accessNumber)
@@ -60,3 +60,25 @@ accessClear.addEventListener("click",function(){
         document.getElementById("history-item-"+i).style.display="none"
     }
 })
+
+ //code for copy
+
+   const accessCopyCount=document.getElementById("copy-count")
+    let copyCount=parseInt(accessCopyCount.innerText)
+
+ 
+document.addEventListener('DOMContentLoaded', function() {
+ 
+    for(let i=1;i<10;i++){
+       
+   
+  const copyText=document.getElementById("number-"+i)
+  const copyButton=document.getElementById("copy-"+i)
+    copyButton.addEventListener("click",function(){
+     const text = copyText.innerText
+      navigator.clipboard.writeText(text)
+      alert("copied number "+copyText.innerText) 
+      copyCount++ 
+       accessCopyCount.innerText=copyCount
+  })
+}})

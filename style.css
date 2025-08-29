@@ -14,4 +14,6 @@
 button{
   cursor: pointer;
 }
-.history-list{display: none;}
+.history-list{ 
+  display: none;
+}
